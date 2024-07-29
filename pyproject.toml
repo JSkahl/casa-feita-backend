@@ -1,0 +1,17 @@
+[project]
+name = "casa-feita"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "JSkahl", email = "josekahl333@gmail.com"},
+]
+dependencies = [
+    "django>=5.0.7",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "["}
+
+
+[tool.pdm]
+distribution = false
