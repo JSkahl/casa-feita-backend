@@ -1,7 +1,7 @@
-from .avaliacao import Avaliacao
-from .cor import Cor
-from .compra import Compra
-# , ItemCompra, Endereco, Cartao
-from .categoria import Categoria
-from .fabricante import Fabricante
-from .produto import Produto
+from .avaliacao import AvaliacaoSeralizer
+from .cartao import CartaoSerializer
+from .cor import CorSeralizer
+from .compra import CompraSeralizer, CompraDetailSerializer
+from .categoria import CategoriaSeralizer
+from .fabricante import FabricanteSeralizer
+from .produto import ProdutoSeralizer, ProdutoDetailSerializer
