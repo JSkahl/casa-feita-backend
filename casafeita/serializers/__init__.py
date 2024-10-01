@@ -5,3 +5,4 @@ from .compra import CompraSeralizer, CompraDetailSerializer, EnderecoSerializer,
 from .categoria import CategoriaSeralizer
 from .fabricante import FabricanteSeralizer
 from .produto import ProdutoSeralizer, ProdutoDetailSerializer
+from .usuario import UsuarioSerializer
