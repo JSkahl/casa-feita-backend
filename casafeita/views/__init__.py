@@ -5,3 +5,4 @@ from .compra import CompraViewSet, ItemCompraViewSet, EnderecoViewSet
 from .categoria import CategoriaViewSet
 from .fabricante import FabricanteViewSet
 from .produto import ProdutoViewSet
+from .usuario import UsuarioViewSet

@@ -2,12 +2,16 @@ from django.db import models
 from django.core.validators import MaxValueValidator
 
 from .produto import Produto
+from .usuario import Usuario
 
 class Endereco(models.Model):
     rua = models.CharField(max_length=150)
     complemento = models.CharField(max_length=150)
     numero = models.IntegerField(validators=[MaxValueValidator(999)])
     cep = models.IntegerField(validators=[MaxValueValidator(99999999)])
+
+    def __str__(self):
+        return f"Endereço {self.id}"
 
     class Meta:
         verbose_name = "Endereço"
@@ -28,13 +32,14 @@ class Compra(models.Model):
         BOLETO = 4, "Boleto"
 
     endereco = models.ForeignKey(Endereco, on_delete=models.PROTECT)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     status = models.IntegerField(choices=StatusCompra.choices, default=StatusCompra.CARRINHO)
     metodo_pagamento = models.IntegerField(choices=MetodoPagamento.choices)
     data = models.DateField(auto_now_add=True)
 
 class ItemCompra(models.Model):
     compra = models.ForeignKey(Compra, on_delete=models.CASCADE, related_name="compras")
-    produto = models.ForeignKey(Produto, on_delete=models.PROTECT, related_name="produtos")
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE, related_name="produtos")
     quantidade = models.IntegerField(default=1)
 
     class Meta:

@@ -4,4 +4,5 @@ from .cor import CorSeralizer
 from .compra import CompraSeralizer, CompraDetailSerializer, EnderecoSerializer, ItemCompraSerializer
 from .categoria import CategoriaSeralizer
 from .fabricante import FabricanteSeralizer
-from .produto import ProdutoSeralizer, ProdutoDetailSerializer
+from .produto import ProdutoSerializer, ProdutoDetailSerializer, ProdutoListSerializer
+from .usuario import UsuarioSerializer
