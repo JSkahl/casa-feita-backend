@@ -10,6 +10,9 @@ class Endereco(models.Model):
     numero = models.IntegerField(validators=[MaxValueValidator(999)])
     cep = models.IntegerField(validators=[MaxValueValidator(99999999)])
 
+    def __str__(self):
+        return f"Endereço {self.id}"
+
     class Meta:
         verbose_name = "Endereço"
         verbose_name_plural = "Endereços"
