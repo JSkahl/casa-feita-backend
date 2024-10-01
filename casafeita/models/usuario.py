@@ -28,8 +28,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         VENDEDOR = 2, 'Vendedor'
         GERENTE = 3, 'Gerente'
 
-    email = models.EmailField(max_length=255)
-    nome = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255, unique=True)
+    nome = models.CharField(max_length=255, unique=True)
     sobrenome = models.CharField(max_length=255, blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -38,7 +38,7 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     objects = GerenciadorUsuario()
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["nome"]
+    REQUIRED_FIELDS = []
 
     class Meta:
         verbose_name = "Usuário"

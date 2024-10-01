@@ -21,8 +21,8 @@ router.register(r"usuários", UsuarioViewSet, basename="usuários")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/", include(router.urls)),
     path("api/media/", include(uploader_router.urls)),
+    path("api/", include(router.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
