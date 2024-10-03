@@ -4,12 +4,15 @@ version = "0.1.0"
 description = "Default template for PDM package"
 authors = [{ name = "JSkahl", email = "josekahl333@gmail.com" }]
 dependencies = [
-    "django>=5.1.1",
+    "django>=5.0.7",
+    "djangorestframework>=3.15.2",
+    "Pillow>=10.4.0",
+    "python-magic>=0.4.27; sys_platform == \"linux\"",
+    "python-magic-bin>=0.4.14; sys_platform == \"win32, darwin\"",
 ]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = { text = "[" }
-
 
 [tool.pdm]
 distribution = false
